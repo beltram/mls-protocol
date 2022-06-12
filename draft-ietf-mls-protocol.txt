@@ -5,7 +5,7 @@
 Network Working Group                                          R. Barnes
 Internet-Draft                                                     Cisco
 Intended status: Informational                             B. Beurdouche
-Expires: 11 December 2022                                Inria & Mozilla
+Expires: 14 December 2022                                Inria & Mozilla
                                                                R. Robert
                                                                         
                                                              J. Millican
@@ -14,7 +14,7 @@ Expires: 11 December 2022                                Inria & Mozilla
                                                                   Google
                                                           K. Cohn-Gordon
                                                     University of Oxford
-                                                             9 June 2022
+                                                            12 June 2022
 
 
               The Messaging Layer Security (MLS) Protocol
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 December 2022.
+   This Internet-Draft will expire on 14 December 2022.
 
 Copyright Notice
 
@@ -169,14 +169,14 @@ Table of Contents
      17.4.  MLS Credential Types
      17.5.  MLS Designated Expert Pool
      17.6.  The "message/mls" MIME Type
-   18. Contributors
-   19. References
-     19.1.  Normative References
-     19.2.  Informative References
+   18. References
+     18.1.  Normative References
+     18.2.  Informative References
    Appendix A.  Protocol Origins of Example Trees
    Appendix B.  Evolution of Parent Hashes
    Appendix C.  Array-Based Trees
    Appendix D.  Link-Based Trees
+   Contributors
    Authors' Addresses
 
 1.  Introduction
@@ -5622,70 +5622,9 @@ psk_secret (or 0) --> KDF.Extract
       The security considerations in this document (RFC XXXX) also
       apply.
 
-18.  Contributors
+18.  References
 
-   *  Joel Alwen
-      Amazon
-      alwenjo@amazon.com
-
-   *  Karthikeyan Bhargavan
-      Inria
-      karthikeyan.bhargavan@inria.fr
-
-   *  Cas Cremers
-      CISPA
-      cremers@cispa.de
-
-   *  Alan Duric
-      Wire
-      alan@wire.com
-
-   *  Britta Hale
-      Naval Postgraduate School
-      britta.hale@nps.edu
-
-   *  Srinivas Inguva
-      Twitter
-      singuva@twitter.com
-
-   *  Konrad Kohbrok
-      Aalto University
-      konrad.kohbrok@datashrine.de
-
-   *  Albert Kwon
-      MIT
-      kwonal@mit.edu
-
-   *  Tom Leavy
-      Amazon
-      tomleavy@amazon.com
-
-   *  Brendan McMillion
-      brendanmcmillion@gmail.com
-
-   *  Marta Mularczyk
-      Amazon
-      mulmarta@amazon.com
-
-   *  Eric Rescorla
-      Mozilla
-      ekr@rtfm.com
-
-   *  Michael Rosenberg
-      Trail of Bits
-      michael.rosenberg@trailofbits.com
-
-   *  Theophile Wallez
-      Inria
-      theophile.wallez@inria.fr
-
-   *  Thyla van der Merwe
-      Royal Holloway, University of London
-      thyla.van.der@merwe.tech
-
-19.  References
-
-19.1.  Normative References
+18.1.  Normative References
 
    [RFC2104]  Krawczyk, H., Bellare, M., and R. Canetti, "HMAC: Keyed-
               Hashing for Message Authentication", RFC 2104,
@@ -5719,7 +5658,7 @@ psk_secret (or 0) --> KDF.Extract
               Public Key Encryption", RFC 9180, DOI 10.17487/RFC9180,
               February 2022, <https://www.rfc-editor.org/rfc/rfc9180>.
 
-19.2.  Informative References
+18.2.  Informative References
 
    [art]      Cohn-Gordon, K., Cremers, C., Garratt, L., Millican, J.,
               and K. Milner, "On Ends-to-Ends Encryption: Asynchronous
@@ -6195,6 +6134,82 @@ Appendix D.  Link-Based Trees
 
            self.depth -= 1
            self.root = self.root.left
+
+Contributors
+
+   Joel Alwen
+   Amazon
+   Email: alwenjo@amazon.com
+
+
+   Karthikeyan Bhargavan
+   Inria
+   Email: karthikeyan.bhargavan@inria.fr
+
+
+   Cas Cremers
+   CISPA
+   Email: cremers@cispa.de
+
+
+   Alan Duric
+   Wire
+   Email: alan@wire.com
+
+
+   Britta Hale
+   Naval Postgraduate School
+   Email: britta.hale@nps.edu
+
+
+   Srinivas Inguva
+   Twitter
+   Email: singuva@twitter.com
+
+
+   Konrad Kohbrok
+   Aalto University
+   Email: konrad.kohbrok@datashrine.de
+
+
+   Albert Kwon
+   MIT
+   Email: kwonal@mit.edu
+
+
+   Tom Leavy
+   Amazon
+   Email: tomleavy@amazon.com
+
+
+   Brendan McMillion
+   Email: brendanmcmillion@gmail.com
+
+
+   Marta Mularczyk
+   Amazon
+   Email: mulmarta@amazon.com
+
+
+   Eric Rescorla
+   Mozilla
+   Email: ekr@rtfm.com
+
+
+   Michael Rosenberg
+   Trail of Bits
+   Email: michael.rosenberg@trailofbits.com
+
+
+   Théophile Wallez
+   Inria
+   Email: theophile.wallez@inria.fr
+
+
+   Thyla van der Merwe
+   Royal Holloway, University of London
+   Email: thyla.van.der@merwe.tech
+
 
 Authors' Addresses
 
