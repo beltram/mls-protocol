@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-06-12T02:02:28.803644+00:00",
+  "timestamp": "2022-06-14T02:06:11.758008+00:00",
   "repo": "mlswg/mls-protocol",
   "labels": [
     {
@@ -7630,15 +7630,15 @@
       "id": "I_kwDOBoyH6c5LY216",
       "title": "Document compilation drop accents",
       "url": "https://github.com/mlswg/mls-protocol/issues/719",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "TWal",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "Hello,\r\n\r\nIn the [\"contributors\" section](https://github.com/mlswg/mls-protocol/blob/main/draft-ietf-mls-protocol.md?plain=1#L5101), my name is correctly written with the \"\u00e9\" accent, however when it is compiled, the accent is dropped, e.g. [here](https://messaginglayersecurity.rocks/mls-protocol/draft-ietf-mls-protocol.html#section-18-1.14) or [here](https://messaginglayersecurity.rocks/mls-protocol/draft-ietf-mls-protocol.txt).\r\n\r\nIt looks like this letter is the only non-ascii character in the whole document, is this the expected behavior when compiling an RFC, or is it an issue in [martinthomson/i-d-template](https://github.com/martinthomson/i-d-template) that I should track?\r\n\r\nThanks!",
       "createdAt": "2022-06-08T14:04:05Z",
-      "updatedAt": "2022-06-09T14:24:37Z",
-      "closedAt": null,
+      "updatedAt": "2022-06-12T20:40:45Z",
+      "closedAt": "2022-06-12T20:40:44Z",
       "comments": [
         {
           "author": "bifurcation",
@@ -7656,19 +7656,59 @@
         },
         {
           "author": "cabo",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "body": "What's wrong with the current kramdown-rfc support?  Please open an issue at rfc.space!",
           "createdAt": "2022-06-09T14:18:39Z",
           "updatedAt": "2022-06-09T14:18:39Z"
         },
         {
           "author": "cabo",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "body": "mnot wrote this up for your convenience...\r\n\r\nhttps://github.com/cabo/kramdown-rfc/wiki/Syntax2#authors-contributors\r\n\r\n",
           "createdAt": "2022-06-09T14:24:37Z",
           "updatedAt": "2022-06-09T14:24:37Z"
         }
       ]
+    },
+    {
+      "number": 725,
+      "id": "I_kwDOBoyH6c5LqxdB",
+      "title": "Missing protocol version inside Welcome?",
+      "url": "https://github.com/mlswg/mls-protocol/issues/725",
+      "state": "CLOSED",
+      "author": "TWal",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "In #529, the `ProtocolVersion` field of `Welcome` is removed. I'm guessing the reason was that is was redundant with the ciphersuite, since the MLS version is at the time included in the ciphersuite.\r\nHowever, in #544, MLS versions were removed from ciphersuites, making the protocol version not redundant anymore with the ciphersuite.\r\n\r\nWe should probably put the MLS version back there?",
+      "createdAt": "2022-06-13T14:11:06Z",
+      "updatedAt": "2022-06-13T16:02:12Z",
+      "closedAt": "2022-06-13T16:02:12Z",
+      "comments": [
+        {
+          "author": "TWal",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I just discovered that this is then fixed by adding the MLS version to `MLSMessage` in #600, closing.",
+          "createdAt": "2022-06-13T16:02:12Z",
+          "updatedAt": "2022-06-13T16:02:12Z"
+        }
+      ]
+    },
+    {
+      "number": 726,
+      "id": "I_kwDOBoyH6c5LrCm0",
+      "title": "Missing \"signature\" argument in \"VerifyWithLabel\"",
+      "url": "https://github.com/mlswg/mls-protocol/issues/726",
+      "state": "OPEN",
+      "author": "TWal",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Introduced in #526.",
+      "createdAt": "2022-06-13T14:59:38Z",
+      "updatedAt": "2022-06-13T14:59:38Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -52377,26 +52417,57 @@
       "id": "PR_kwDOBoyH6c45gWHN",
       "title": "Fix #719 (contributors section)",
       "url": "https://github.com/mlswg/mls-protocol/pull/724",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "cabo",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "To check whether there actually is a problem, I made the fix for #719, and it seems to work as designed.",
       "createdAt": "2022-06-11T14:50:28Z",
-      "updatedAt": "2022-06-11T14:50:28Z",
+      "updatedAt": "2022-06-12T20:40:44Z",
       "baseRepository": "mlswg/mls-protocol",
       "baseRefName": "main",
       "baseRefOid": "4e4671121d4e38461675adffb7e6f3ebfa919cfb",
       "headRepository": "cabo/mls-protocol",
       "headRefName": "fix-contributors",
-      "headRefOid": "3a6b3856bd0fb66870725dc2dfbe21fa22181e84",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
-      "reviews": []
+      "headRefOid": "912a56d5b58a601a06b556417bffbdfa2568871f",
+      "closedAt": "2022-06-12T20:40:44Z",
+      "mergedAt": "2022-06-12T20:40:43Z",
+      "mergedBy": "bifurcation",
+      "mergeCommit": {
+        "oid": "7cd54f6f7cddb6ce0f1c2bd6f7cba26809c0aee0"
+      },
+      "comments": [
+        {
+          "author": "bifurcation",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Thanks @cabo, I didn't know about this feature!  If you'd like to do the same on [the architecture doc](https://github.com/mlswg/mls-architecture/), I would appreciate it.",
+          "createdAt": "2022-06-12T20:40:39Z",
+          "updatedAt": "2022-06-12T20:40:39Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOBoyH6c470mK6",
+          "commit": {
+            "abbreviatedOid": "3a6b385"
+          },
+          "author": "Bren2010",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-06-12T16:35:18Z",
+          "updatedAt": "2022-06-12T16:38:47Z",
+          "comments": [
+            {
+              "originalPosition": 34,
+              "body": "```suggestion\r\n   email: brendanmcmillion@gmail.com\r\n```",
+              "createdAt": "2022-06-12T16:35:18Z",
+              "updatedAt": "2022-06-12T16:38:47Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
