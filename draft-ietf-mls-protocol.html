@@ -3096,8 +3096,8 @@ by a label as shown below:<a href="#section-6.1-11" class="pilcrow">¶</a></p>
 SignWithLabel(SignatureKey, Label, Content) =
     Signature.Sign(SignatureKey, SignContent)
 
-VerifyWithLabel(VerificationKey, Label, Content) =
-    Signature.Verify(VerificationKey, SignContent)
+VerifyWithLabel(VerificationKey, Label, Content, SignatureValue) =
+    Signature.Verify(VerificationKey, SignContent, SignatureValue)
 
 Where SignContent is specified as:
 
