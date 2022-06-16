@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-06-14T02:06:11.758008+00:00",
+  "timestamp": "2022-06-16T01:53:26.913432+00:00",
   "repo": "mlswg/mls-protocol",
   "labels": [
     {
@@ -7699,15 +7699,15 @@
       "id": "I_kwDOBoyH6c5LrCm0",
       "title": "Missing \"signature\" argument in \"VerifyWithLabel\"",
       "url": "https://github.com/mlswg/mls-protocol/issues/726",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "TWal",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "Introduced in #526.",
       "createdAt": "2022-06-13T14:59:38Z",
-      "updatedAt": "2022-06-13T14:59:38Z",
-      "closedAt": null,
+      "updatedAt": "2022-06-15T21:44:04Z",
+      "closedAt": "2022-06-15T21:44:04Z",
       "comments": []
     }
   ],
@@ -52377,24 +52377,26 @@
       "id": "PR_kwDOBoyH6c45fEaR",
       "title": "Add `external_senders` to MLS Extension Types registry",
       "url": "https://github.com/mlswg/mls-protocol/pull/723",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "tomleavy",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "`external_senders` was missing from the Extension Types table so it didn't have an extension type value assigned",
       "createdAt": "2022-06-10T18:56:32Z",
-      "updatedAt": "2022-06-10T20:32:32Z",
+      "updatedAt": "2022-06-15T20:24:17Z",
       "baseRepository": "mlswg/mls-protocol",
       "baseRefName": "main",
       "baseRefOid": "4e4671121d4e38461675adffb7e6f3ebfa919cfb",
       "headRepository": "tomleavy/mls-protocol",
       "headRefName": "external-senders-ext-fix",
       "headRefOid": "08fce3b8d0d0952e369caa91e5fc05969d85af3d",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2022-06-15T20:24:17Z",
+      "mergedAt": "2022-06-15T20:24:16Z",
+      "mergedBy": "bifurcation",
+      "mergeCommit": {
+        "oid": "a45a4bf8f511b84122c8c293b8255a0d8fd49694"
+      },
       "comments": [],
       "reviews": [
         {
@@ -52408,6 +52410,19 @@
           "body": "Thanks",
           "createdAt": "2022-06-10T20:32:32Z",
           "updatedAt": "2022-06-10T20:32:32Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOBoyH6c48FiUw",
+          "commit": {
+            "abbreviatedOid": "08fce3b"
+          },
+          "author": "bifurcation",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-06-15T20:24:12Z",
+          "updatedAt": "2022-06-15T20:24:12Z",
           "comments": []
         }
       ]
@@ -52468,6 +52483,34 @@
           ]
         }
       ]
+    },
+    {
+      "number": 727,
+      "id": "PR_kwDOBoyH6c45u37t",
+      "title": "Add signature input to VerifyWithLabel",
+      "url": "https://github.com/mlswg/mls-protocol/pull/727",
+      "state": "MERGED",
+      "author": "bifurcation",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Fixes #726 ",
+      "createdAt": "2022-06-15T20:27:17Z",
+      "updatedAt": "2022-06-15T21:44:04Z",
+      "baseRepository": "mlswg/mls-protocol",
+      "baseRefName": "main",
+      "baseRefOid": "a45a4bf8f511b84122c8c293b8255a0d8fd49694",
+      "headRepository": "mlswg/mls-protocol",
+      "headRefName": "sig-input",
+      "headRefOid": "e590eb98e4c42f0a39a349612853b81229e890ce",
+      "closedAt": "2022-06-15T21:44:04Z",
+      "mergedAt": "2022-06-15T21:44:04Z",
+      "mergedBy": "bifurcation",
+      "mergeCommit": {
+        "oid": "51bb7416555e7cde38b97aa2349bef80c733111c"
+      },
+      "comments": [],
+      "reviews": []
     }
   ]
 }
