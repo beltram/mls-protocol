@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-06-16T01:53:26.913432+00:00",
+  "timestamp": "2022-06-23T01:56:49.607057+00:00",
   "repo": "mlswg/mls-protocol",
   "labels": [
     {
@@ -52511,6 +52511,46 @@
       },
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 728,
+      "id": "PR_kwDOBoyH6c46BQWq",
+      "title": "Fix GroupInfoTBS",
+      "url": "https://github.com/mlswg/mls-protocol/pull/728",
+      "state": "OPEN",
+      "author": "TWal",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "The `confirmation_tag` was missing. The error was introduced in #706.\r\n\r\nThis kind of error makes me wonder if the redundancy between the `...` and the `...TBS` really are necessary.\r\n\r\nIn my code, I use a pattern like this:\r\n```\r\nstruct {\r\n    GroupContext group_context;\r\n    Extension extensions<V>;\r\n    MAC confirmation_tag;\r\n    uint32 signer;\r\n} GroupInfoTBS;\r\n\r\nstruct {\r\n    GroupInfoTBS tbs;\r\n    // SignWithLabel(., \"GroupInfoTBS\", GroupInfoTBS)\r\n    opaque signature<V>;\r\n} GroupInfo;\r\n```\r\n\r\nNo copy-paste error possible! Looks a bit weird, but if we replace \"tbs\" by \"data\", it makes more sense.",
+      "createdAt": "2022-06-21T10:44:34Z",
+      "updatedAt": "2022-06-21T15:51:01Z",
+      "baseRepository": "mlswg/mls-protocol",
+      "baseRefName": "main",
+      "baseRefOid": "51bb7416555e7cde38b97aa2349bef80c733111c",
+      "headRepository": "TWal/mls-protocol",
+      "headRefName": "twal_fix_group_info_tbs",
+      "headRefOid": "53a1b0973bad01eaa6b5fd4527bb1bbda32ebd50",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOBoyH6c48bifU",
+          "commit": {
+            "abbreviatedOid": "53a1b09"
+          },
+          "author": "Bren2010",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-06-21T15:51:01Z",
+          "updatedAt": "2022-06-21T15:51:01Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
