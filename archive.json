@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-06-23T01:56:49.607057+00:00",
+  "timestamp": "2022-07-03T02:06:25.583368+00:00",
   "repo": "mlswg/mls-protocol",
   "labels": [
     {
@@ -52524,7 +52524,7 @@
       "labels": [],
       "body": "The `confirmation_tag` was missing. The error was introduced in #706.\r\n\r\nThis kind of error makes me wonder if the redundancy between the `...` and the `...TBS` really are necessary.\r\n\r\nIn my code, I use a pattern like this:\r\n```\r\nstruct {\r\n    GroupContext group_context;\r\n    Extension extensions<V>;\r\n    MAC confirmation_tag;\r\n    uint32 signer;\r\n} GroupInfoTBS;\r\n\r\nstruct {\r\n    GroupInfoTBS tbs;\r\n    // SignWithLabel(., \"GroupInfoTBS\", GroupInfoTBS)\r\n    opaque signature<V>;\r\n} GroupInfo;\r\n```\r\n\r\nNo copy-paste error possible! Looks a bit weird, but if we replace \"tbs\" by \"data\", it makes more sense.",
       "createdAt": "2022-06-21T10:44:34Z",
-      "updatedAt": "2022-06-21T15:51:01Z",
+      "updatedAt": "2022-06-30T12:19:28Z",
       "baseRepository": "mlswg/mls-protocol",
       "baseRefName": "main",
       "baseRefOid": "51bb7416555e7cde38b97aa2349bef80c733111c",
@@ -52535,7 +52535,15 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "bifurcation",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Thanks, @TWal.  FWIW, I would be disinclined to make the change you propose at this point.  It's a fine idea (it's what [X.509 does](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1)), but we're late enough in the process that I would like to avoid changes of that magnitude.",
+          "createdAt": "2022-06-30T12:18:58Z",
+          "updatedAt": "2022-06-30T12:18:58Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOBoyH6c48bifU",
@@ -52549,8 +52557,47 @@
           "createdAt": "2022-06-21T15:51:01Z",
           "updatedAt": "2022-06-21T15:51:01Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOBoyH6c49FMYa",
+          "commit": {
+            "abbreviatedOid": "53a1b09"
+          },
+          "author": "bifurcation",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-06-30T12:19:28Z",
+          "updatedAt": "2022-06-30T12:19:28Z",
+          "comments": []
         }
       ]
+    },
+    {
+      "number": 729,
+      "id": "PR_kwDOBoyH6c46oxJV",
+      "title": "Make reference to h2 informative",
+      "url": "https://github.com/mlswg/mls-protocol/pull/729",
+      "state": "OPEN",
+      "author": "bifurcation",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "As @fluffy pointed out on the mailing list, this reference does not need to be normative.",
+      "createdAt": "2022-06-30T12:16:02Z",
+      "updatedAt": "2022-06-30T12:16:02Z",
+      "baseRepository": "mlswg/mls-protocol",
+      "baseRefName": "main",
+      "baseRefOid": "51bb7416555e7cde38b97aa2349bef80c733111c",
+      "headRepository": "mlswg/mls-protocol",
+      "headRefName": "info-7540",
+      "headRefOid": "ae45744e98a895d79202f0d153f26aa3591d3536",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
