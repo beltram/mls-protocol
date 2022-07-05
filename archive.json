@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-07-03T02:06:25.583368+00:00",
+  "timestamp": "2022-07-05T02:03:44.146049+00:00",
   "repo": "mlswg/mls-protocol",
   "labels": [
     {
@@ -52524,7 +52524,7 @@
       "labels": [],
       "body": "The `confirmation_tag` was missing. The error was introduced in #706.\r\n\r\nThis kind of error makes me wonder if the redundancy between the `...` and the `...TBS` really are necessary.\r\n\r\nIn my code, I use a pattern like this:\r\n```\r\nstruct {\r\n    GroupContext group_context;\r\n    Extension extensions<V>;\r\n    MAC confirmation_tag;\r\n    uint32 signer;\r\n} GroupInfoTBS;\r\n\r\nstruct {\r\n    GroupInfoTBS tbs;\r\n    // SignWithLabel(., \"GroupInfoTBS\", GroupInfoTBS)\r\n    opaque signature<V>;\r\n} GroupInfo;\r\n```\r\n\r\nNo copy-paste error possible! Looks a bit weird, but if we replace \"tbs\" by \"data\", it makes more sense.",
       "createdAt": "2022-06-21T10:44:34Z",
-      "updatedAt": "2022-06-30T12:19:28Z",
+      "updatedAt": "2022-07-03T15:16:21Z",
       "baseRepository": "mlswg/mls-protocol",
       "baseRefName": "main",
       "baseRefOid": "51bb7416555e7cde38b97aa2349bef80c733111c",
@@ -52542,6 +52542,13 @@
           "body": "Thanks, @TWal.  FWIW, I would be disinclined to make the change you propose at this point.  It's a fine idea (it's what [X.509 does](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1)), but we're late enough in the process that I would like to avoid changes of that magnitude.",
           "createdAt": "2022-06-30T12:18:58Z",
           "updatedAt": "2022-06-30T12:18:58Z"
+        },
+        {
+          "author": "MartaMularczyk",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "> Thanks, @TWal. FWIW, I would be disinclined to make the change you propose at this point. It's a fine idea (it's what [X.509 does](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1)), but we're late enough in the process that I would like to avoid changes of that magnitude.\r\n\r\nTo me it seems that this doesn't introduce a new change, but instead reverts a change made by mistake a month ago. The tag has always been signed, also in the version of MLS we analyzed.",
+          "createdAt": "2022-07-03T15:16:21Z",
+          "updatedAt": "2022-07-03T15:16:21Z"
         }
       ],
       "reviews": [
